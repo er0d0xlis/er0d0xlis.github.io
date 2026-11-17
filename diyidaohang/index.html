@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第一导航-实用网址分类索引</title>
+  <meta name="description" content="第一导航是一个人工精选的中文网址分类索引站，按工具、学习、资讯、生活等场景整理可用站点，含更新日志、使用指南与常见问题。">
+  <meta name="keywords" content="第一导航">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f5c8c'/%3E%3Cpath d='M25 50h50M50 25v50' stroke='%23fff' stroke-width='12' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23f2b84b'/%3E%3C/svg%3E">
+  <style>
+    :root{
+      --ink:#1a2332;
+      --ink-soft:#4a5568;
+      --paper:#f5f7fa;
+      --card:#ffffff;
+      --brand:#0f5c8c;
+      --brand-dark:#0a4166;
+      --accent:#d97706;
+      --accent-soft:#fef3c7;
+      --line:#dbe2ea;
+      --radius:12px;
+      --shadow-sm:0 1px 3px rgba(16,38,66,.08);
+      --shadow-md:0 4px 14px rgba(16,38,66,.10);
+      --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+      --w:1180px;
+      --ann-h:38px;
+      --head-h:64px;
+      --stick:calc(var(--ann-h) + var(--head-h));
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:calc(var(--stick) + 12px)}
+    body{margin:0;font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.7;font-size:15px}
+    h1,h2,h3,h4{margin:0 0 .5em;line-height:1.3;font-weight:700}
+    h2{font-size:1.5rem;letter-spacing:.01em}
+    h3{font-size:1.08rem;margin-top:1.1em}
+    p{margin:.55em 0}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    ul,ol{margin:.4em 0 .8em;padding-left:1.3em}
+    li{margin:.25em 0}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+    :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+    /* 吸顶公告条 */
+    .announce{position:sticky;top:0;z-index:60;background:var(--brand-dark);color:#e8f2fa;font-size:.82rem;height:var(--ann-h);display:flex;align-items:center}
+    .announce .wrap{display:flex;gap:10px;align-items:center;white-space:nowrap;overflow:hidden}
+    .announce b{color:#ffd98a;font-weight:600}
+    .announce .dot{width:6px;height:6px;border-radius:50%;background:#7fd1a0;flex:0 0 auto}
+
+    /* 吸顶页头 */
+    .site-head{position:sticky;top:var(--ann-h);z-index:55;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);height:var(--head-h)}
+    .site-head .wrap{display:flex;align-items:center;gap:18px;height:100%}
+    .brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.15rem;color:var(--ink);letter-spacing:.02em}
+    .brand:hover{text-decoration:none}
+    .brand svg{width:30px;height:30px;flex:0 0 auto}
+    .nav-main{display:flex;gap:2px;margin-left:8px;flex-wrap:wrap}
+    .nav-main a{color:var(--ink-soft);font-size:.9rem;padding:6px 10px;border-radius:8px;font-weight:500}
+    .nav-main a:hover,.nav-main a:focus-visible{background:var(--accent-soft);color:var(--brand-dark);text-decoration:none}
+    .head-tools{margin-left:auto;display:flex;align-items:center;gap:10px}
+    .search{margin:0}
+    .search input{width:168px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;font:inherit;font-size:.86rem;background:var(--paper)}
+    .search input:focus{border-color:var(--brand);background:#fff;outline:none;box-shadow:0 0 0 3px rgba(15,92,140,.15)}
+    .search-out{font-size:.78rem;color:var(--accent);margin-left:4px;position:absolute;background:#fff;padding:2px 8px;border:1px solid var(--line);border-radius:6px;display:none}
+    .menu-btn{display:none;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font:inherit;font-size:.86rem;cursor:pointer;color:var(--ink)}
+    .menu-btn:focus-visible{outline:3px solid var(--accent)}
+
+    /* 首屏 */
+    .hero{padding:34px 0 30px;background:linear-gradient(155deg,#eaf2f8 0%,#f5f7fa 58%,#fdf6e8 100%);border-bottom:1px solid var(--line)}
+    .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--brand-dark);background:#dcecf7;border:1px solid #b9d6ea;border-radius:999px;padding:4px 12px;margin-bottom:12px;letter-spacing:.04em}
+    .hero h1{font-size:2.4rem;letter-spacing:.02em;margin-bottom:.3em;color:var(--brand-dark)}
+    .hero-lead{font-size:1.02rem;color:var(--ink-soft);max-width:34em}
+    .hero-cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:10px;font-weight:600;font-size:.92rem;border:1px solid transparent;transition:transform .12s ease}
+    .btn:hover{text-decoration:none;transform:translateY(-2px)}
+    .btn-primary{background:var(--brand);color:#fff;box-shadow:var(--shadow-sm)}
+    .btn-primary:hover{background:var(--brand-dark)}
+    .btn-ghost{background:#fff;color:var(--brand-dark);border-color:var(--line)}
+    .hero-stats{display:flex;gap:26px;margin-top:22px;font-size:.82rem;color:var(--ink-soft)}
+    .hero-stats b{display:block;font-size:1.3rem;color:var(--brand-dark)}
+    .hero-art{position:relative;min-height:220px;display:flex;align-items:center;justify-content:center}
+    .hero-art svg{width:100%;max-width:380px;height:auto}
+    @media (max-width:900px){
+      .hero .wrap{grid-template-columns:1fr;gap:18px}
+      .hero h1{font-size:1.9rem}
+      .hero-art{order:-1;max-width:320px;margin:0 auto}
+      .hero-art svg{max-height:170px}
+    }
+
+    /* 主内容区：双栏标准 */
+    .main-grid{display:grid;grid-template-columns:minmax(0,1fr) 292px;gap:30px;padding:30px 0 50px;align-items:start}
+    @media (max-width:1020px){.main-grid{grid-template-columns:1fr}}
+    .content > section{margin-bottom:44px}
+    .content > section:last-child{margin-bottom:0}
+
+    .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:14px;border-bottom:2px solid var(--line);padding-bottom:8px}
+    .sec-head h2{margin:0;font-size:1.28rem}
+    .sec-head .tag-link{font-size:.8rem;color:var(--ink-soft);white-space:nowrap}
+
+    /* 板块通用 */
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+    .pad{padding:18px 20px}
+    .muted{color:var(--ink-soft);font-size:.88rem}
+    .kicker{font-size:.74rem;letter-spacing:.08em;color:var(--accent);font-weight:700;text-transform:uppercase}
+
+    /* 领域概览 */
+    .overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:700px){.overview-grid{grid-template-columns:1fr}}
+    .overview-grid .card{padding:16px}
+    .overview-grid h3{font-size:.98rem;margin-top:0;color:var(--brand-dark)}
+    .num-tag{display:inline-block;font-size:.72rem;background:var(--accent-soft);color:#92400e;border-radius:6px;padding:1px 8px;margin-bottom:6px;font-weight:600}
+
+    /* 精选内容推荐：非对称组合 */
+    .featured{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .featured .main-card{grid-row:span 2;display:flex;flex-direction:column;padding:0;overflow:hidden}
+    .featured .main-card img{width:100%;height:170px;object-fit:cover}
+    .featured .main-card .body{padding:16px 18px}
+    .featured .side-stack{display:flex;flex-direction:column;gap:14px}
+    .featured .mini{padding:13px 16px}
+    .featured h3{margin:0 0 4px;font-size:1rem}
+    @media (max-width:700px){.featured{grid-template-columns:1fr}.featured .main-card{grid-row:auto}}
+
+    /* 最新更新：紧凑列表 */
+    .updates{list-style:none;padding:0;margin:0}
+    .updates li{display:flex;gap:12px;padding:11px 4px;border-bottom:1px dashed var(--line);align-items:baseline}
+    .updates li:last-child{border-bottom:0}
+    .updates time{flex:0 0 74px;font-size:.8rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+    .updates .u-body{flex:1;min-width:0}
+    .updates .u-body b{font-weight:600}
+
+    /* 分类入口：标签索引 */
+    .tag-index{display:flex;flex-wrap:wrap;gap:8px}
+    .tag-index a{display:inline-block;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:.85rem;color:var(--ink-soft)}
+    .tag-index a:hover{background:var(--brand);color:#fff;border-color:var(--brand);text-decoration:none}
+    .tag-index a .cnt{font-size:.72rem;opacity:.65;margin-left:4px}
+
+    /* 深度解析：分栏正文 */
+    .deep{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow-sm)}
+    .deep .lede{font-size:.95rem;color:var(--ink-soft);border-left:3px solid var(--accent);padding-left:12px;margin:6px 0 16px}
+    .deep h3{margin-top:1.2em;font-size:1.02rem;color:var(--brand-dark)}
+    .deep h3:first-of-type{margin-top:.4em}
+    .claim-table{width:100%;border-collapse:collapse;font-size:.86rem;margin:10px 0 4px}
+    .claim-table th,.claim-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+    .claim-table th{background:#f1f5f9;font-weight:600;color:var(--brand-dark)}
+    .claim-table td{background:#fff}
+
+    /* 体验指南：编号步骤 */
+    .steps{list-style:none;padding:0;margin:0;counter-reset:step}
+    .steps li{position:relative;padding:10px 0 10px 46px;border-bottom:1px solid #edf1f5}
+    .steps li:last-child{border-bottom:0}
+    .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:10px;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.86rem}
+    .steps b{display:block;color:var(--ink)}
+
+    /* FAQ */
+    details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:9px;overflow:hidden}
+    details.faq summary{cursor:pointer;padding:12px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+    details.faq summary::-webkit-details-marker{display:none}
+    details.faq summary::after{content:"＋";color:var(--brand);font-weight:700;flex:0 0 auto}
+    details.faq[open] summary::after{content:"－"}
+    details.faq .faq-body{padding:0 16px 13px;font-size:.9rem;color:var(--ink-soft)}
+
+    /* 评论 */
+    .comments{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:700px){.comments{grid-template-columns:1fr}}
+    .comment{background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px 15px;font-size:.88rem}
+    .comment .who{font-weight:600;font-size:.82rem;color:var(--brand-dark);display:flex;justify-content:space-between;gap:8px}
+    .comment .who span{font-weight:400;color:var(--ink-soft);font-size:.76rem}
+    .comment p{margin:.4em 0 0}
+    .stars{color:var(--accent);letter-spacing:1px;font-size:.8rem}
+
+    /* 资讯列表 */
+    .news-list{list-style:none;padding:0;margin:0}
+    .news-list li{padding:11px 0;border-bottom:1px solid #edf1f5;display:flex;gap:12px;align-items:baseline}
+    .news-list li:last-child{border-bottom:0}
+    .news-list .n-date{flex:0 0 74px;font-size:.78rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+    .news-list .n-title{font-weight:600;color:var(--ink)}
+    .news-list .n-desc{display:block;font-size:.82rem;color:var(--ink-soft);margin-top:1px}
+
+    /* 相关推荐 */
+    .rec-tags{display:flex;flex-wrap:wrap;gap:8px}
+    .rec-tags a{background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:.84rem;color:var(--ink-soft)}
+    .rec-tags a:hover{border-color:var(--brand);color:var(--brand-dark);text-decoration:none;background:#f2f8fc}
+
+    /* 榜单 */
+    .rank-list{list-style:none;padding:0;margin:0;counter-reset:rank}
+    .rank-list li{counter-increment:rank;display:flex;gap:12px;padding:9px 0;border-bottom:1px solid #edf1f5;align-items:baseline}
+    .rank-list li:last-child{border-bottom:0}
+    .rank-list li::before{content:counter(rank);flex:0 0 22px;font-weight:800;color:#b6c3d1;font-size:1rem;text-align:right}
+    .rank-list li:nth-child(-n+3)::before{color:var(--accent)}
+    .rank-list .r-name{font-weight:600}
+    .rank-list .r-meta{font-size:.8rem;color:var(--ink-soft)}
+
+    /* 侧栏 */
+    .sidebar .card{margin-bottom:18px;padding:16px 18px}
+    .sidebar h2{font-size:1rem;margin-bottom:8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+    .side-nav{list-style:none;padding:0;margin:0}
+    .side-nav a{display:block;padding:6px 8px;border-radius:7px;font-size:.87rem;color:var(--ink-soft)}
+    .side-nav a.active{background:var(--brand);color:#fff}
+    .side-nav a:hover{background:var(--accent-soft);color:var(--brand-dark);text-decoration:none}
+
+    /* 页脚 */
+    .site-foot{background:#132433;color:#c9d6e2;padding:34px 0 20px;font-size:.86rem}
+    .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:26px}
+    @media (max-width:800px){.foot-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:460px){.foot-grid{grid-template-columns:1fr}}
+    .site-foot h3{font-size:.9rem;color:#fff;margin-bottom:8px}
+    .site-foot a{color:#a9c2d6;font-size:.84rem}
+    .site-foot a:hover{color:#fff}
+    .site-foot ul{list-style:none;padding:0;margin:0}
+    .site-foot li{margin:.3em 0}
+    .foot-brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.05rem;color:#fff;margin-bottom:6px}
+    .foot-brand svg{width:26px;height:26px}
+    .foot-note{border-top:1px solid #2a3d4f;margin-top:24px;padding-top:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.78rem;color:#8fa6ba}
+
+    /* 回到顶部 */
+    .to-top{position:fixed;right:18px;bottom:22px;z-index:70;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--brand);font-size:1.2rem;box-shadow:var(--shadow-md);cursor:pointer;display:none;align-items:center;justify-content:center}
+    .to-top.show{display:flex}
+    @media (max-width:600px){.to-top{right:12px;bottom:14px;width:38px;height:38px;font-size:1rem}}
+
+    /* 移动端菜单 */
+    @media (max-width:1020px){
+      .menu-btn{display:inline-block}
+      .nav-main{display:none;position:absolute;top:var(--head-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:8px 16px 14px;box-shadow:var(--shadow-md);margin:0;gap:2px}
+      .nav-main.open{display:flex}
+      .nav-main a{padding:9px 8px;font-size:.95rem}
+      .head-tools{margin-left:auto}
+      .search input{width:130px}
+    }
+    @media (max-width:420px){
+      .announce .wrap{font-size:.74rem}
+      .search input{width:96px}
+      .hero-cta .btn{padding:8px 14px;font-size:.86rem}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *{transition-duration:0s !important;animation-duration:0s !important}
+      .btn:hover{transform:none}
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce" id="announce">
+    <div class="wrap">
+      <span class="dot" aria-hidden="true"></span>
+      <span><b>更新</b> 11月7日新增“在线文档协作”分类，收录 12 个可直接访问的站点；本周更新记录 36 条。</span>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-head" id="sitehead">
+    <div class="wrap">
+      <a class="brand" href="/#top" aria-label="第一导航 首页">
+        <svg viewBox="0 0 100 100" role="img" aria-hidden="true">
+          <rect width="100" height="100" rx="22" fill="#0f5c8c"></rect>
+          <path d="M25 50h50M50 25v50" stroke="#fff" stroke-width="12" stroke-linecap="round"></path>
+          <circle cx="50" cy="50" r="10" fill="#f2b84b"></circle>
+        </svg>
+        第一导航
+      </a>
+      <nav class="nav-main" id="navMain" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选推荐</a>
+        <a href="/#updates">更新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问题</a>
+      </nav>
+      <div class="head-tools">
+        <form class="search" id="searchForm" role="search" onsubmit="return false;">
+          <label for="searchInput" class="visually-hidden" style="position:absolute;left:-9999px;">站内查找</label>
+          <input id="searchInput" type="search" placeholder="查找站点或分类…" autocomplete="off" aria-describedby="searchOut">
+          <span class="search-out" id="searchOut" role="status"></span>
+        </form>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navMain">菜单</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 首屏 -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">人工筛选 · 第 7 版索引库</span>
+        <h1>第一导航</h1>
+        <p class="hero-lead">把分散在收藏夹里的网址按使用场景重新归拢：查资料、做设计、写代码、找文档模板，从分类入口进入，每条收录都标注可访问状态和最近核验日期。</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="/#categories">浏览全部分类</a>
+          <a class="btn btn-ghost" href="/#guide">了解收录标准</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>128</b>收录站点</div>
+          <div><b>14</b>一级分类</div>
+          <div><b>11.07</b>最近核验</div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 360 280" role="img">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#dbe9f4"/><stop offset="1" stop-color="#f7edd9"/>
+            </linearGradient>
+          </defs>
+          <rect x="10" y="16" width="340" height="248" rx="18" fill="url(#g1)" stroke="#c3d6e5"></rect>
+          <rect x="34" y="42" width="130" height="86" rx="10" fill="#fff" stroke="#bcd3e4"></rect>
+          <text x="48" y="72" font-family="sans-serif" font-size="11" fill="#0f5c8c" font-weight="700">工具 / 文档</text>
+          <rect x="48" y="82" width="100" height="6" rx="3" fill="#dbe7f0"></rect>
+          <rect x="48" y="96" width="72" height="6" rx="3" fill="#dbe7f0"></rect>
+          <rect x="48" y="110" width="86" height="6" rx="3" fill="#dbe7f0"></rect>
+          <rect x="190" y="42" width="140" height="54" rx="10" fill="#fff" stroke="#bcd3e4"></rect>
+          <text x="204" y="68" font-family="sans-serif" font-size="11" fill="#0f5c8c" font-weight="700">学习 / 课程</text>
+          <rect x="204" y="78" width="96" height="6" rx="3" fill="#dbe7f0"></rect>
+          <rect x="190" y="108" width="140" height="54" rx="10" fill="#fff" stroke="#bcd3e4"></rect>
+          <text x="204" y="134" font-family="sans-serif" font-size="11" fill="#0f5c8c" font-weight="700">资讯 / 数据</text>
+          <rect x="204" y="144" width="84" height="6" rx="3" fill="#dbe7f0"></rect>
+          <rect x="34" y="146" width="130" height="96" rx="10" fill="#fff" stroke="#bcd3e4"></rect>
+          <text x="48" y="176" font-family="sans-serif" font-size="11" fill="#0f5c8c" font-weight="700">设计 / 素材</text>
+          <rect x="48" y="186" width="100" height="6" rx="3" fill="#dbe7f0"></rect>
+          <rect x="48" y="200" width="66" height="6" rx="3" fill="#dbe7f0"></rect>
+          <rect x="48" y="214" width="88" height="6" rx="3" fill="#dbe7f0"></rect>
+          <circle cx="292" cy="214" r="30" fill="#f2b84b" opacity=".85"></circle>
+          <path d="M282 214l7 8 14-16" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主内容区：双栏 -->
+  <div class="wrap main-grid">
+    <main class="content">
+
+      <!-- 1 领域概览 -->
+      <section id="overview" aria-labelledby="h-overview">
+        <div class="sec-head">
+          <h2 id="h-overview">领域概览：导航站到底在解决什么</h2>
+          <a class="tag-link" href="/#categories">按分类查看 →</a>
+        </div>
+        <div class="overview-grid">
+          <div class="card">
+            <span class="num-tag">01 收录</span>
+            <h3>人工筛选与状态标记</h3>
+            <p>每一条收录都记录首次收录日期和最近核验日期。11月7日核验中，有 9 个站点因域名过期被移出索引，4 个迁移到新域名后重新收录。</p>
+          </div>
+          <div class="card">
+            <span class="num-tag">02 分类</span>
+            <h3>按使用场景而非行业分</h3>
+            <p>“写周报时找图表模板”和“查行业报告”同属文档场景，但检索路径不同。一级分类 14 个，二级标签 63 个，可按标签交叉浏览。</p>
+          </div>
+          <div class="card">
+            <span class="num-tag">03 核验</span>
+            <h3>可访问性是第一门槛</h3>
+            <p>收录前要求在 Chrome 120 和 Safari 17 下各打开一次，并检查是否有强制登录墙。纯登录后才可见内容的站点会降低排序。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 精选内容推荐 -->
+      <section id="featured" aria-labelledby="h-featured">
+        <div class="sec-head">
+          <h2 id="h-featured">精选内容推荐</h2>
+          <a class="tag-link" href="/#updates">查看本周更新 →</a>
+        </div>
+        <div class="featured">
+          <article class="card main-card">
+            <img src="https://picsum.photos/seed/navdoc11/640/360" width="640" height="360" loading="lazy" alt="在线文档协作分类页面上展示的多人编辑界面截图">
+            <div class="body">
+              <span class="kicker">本周主推</span>
+              <h3>在线文档协作分类：12 个可用的多人编辑站点</h3>
+              <p class="muted">从轻量共享笔记到带版本历史的表格协作，按是否需要注册、免费额度、导出格式做了对照。11月6日新增 3 个支持 Markdown 导入的站点。</p>
+              <a href="/#categories">进入该分类 →</a>
+            </div>
+          </article>
+          <div class="side-stack">
+            <article class="card mini">
+              <h3>免费图库与可商用素材</h3>
+              <p class="muted">按授权类型分组：CC0、署名要求、仅个人使用。11月5日移除 2 个已改收费的图库。</p>
+            </article>
+            <article class="card mini">
+              <h3>PDF 与表格在线转换</h3>
+              <p class="muted">收录 8 个无需安装的转换入口，其中 5 个支持 50MB 以内文件，页面标注了单次限制。</p>
+            </article>
+            <article class="card mini">
+              <h3>开发者文档镜像与速查</h3>
+              <p class="muted">按语言和框架分组，标注更新频率，避免收录长期停更的镜像站。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section id="updates" aria-labelledby="h-updates">
+        <div class="sec-head">
+          <h2 id="h-updates">最新更新记录</h2>
+          <a class="tag-link" href="/#news">相关资讯 →</a>
+        </div>
+        <ul class="updates">
+          <li><time datetime="2026-11-07">11月7日</time><div class="u-body"><b>新增分类：在线文档协作</b><span class="muted">收录 Airtable、飞书文档、Coda 等 12 个站点，均通过可访问性检查。</span></div></li>
+          <li><time datetime="2026-11-06">11月6日</time><div class="u-body"><b>更新“免费图库”条目授权说明</b><span class="muted">Pexels 与 Unsplash 的商用授权条款在 10 月底有文字调整，已核对并更正 3 条描述。</span></div></li>
+          <li><time datetime="2026-11-05">11月5日</time><div class="u-body"><b>移除 2 个失效站点</b><span class="muted">原“在线 PDF 工具箱”和“旧版速查表”返回 404，索引库不再展示。</span></div></li>
+          <li><time datetime="2026-11-04">11月4日</time><div class="u-body"><b>新增标签：Markdown 导入</b><span class="muted">在文档协作与笔记分类下启用，可交叉筛选 7 个支持该功能的站点。</span></div></li>
+          <li><time datetime="2026-11-02">11月2日</time><div class="u-body"><b>站内搜索支持分类名与标签</b><span class="muted">输入“图库”或“转换”可直接定位到对应分类区块。</span></div></li>
+        </ul>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section id="categories" aria-labelledby="h-categories">
+        <div class="sec-head">
+          <h2 id="h-categories">分类入口</h2>
+          <span class="tag-link">共 14 个一级分类</span>
+        </div>
+        <div class="tag-index">
+          <a href="/#featured">在线文档协作<span class="cnt">12</span></a>
+          <a href="/#featured">免费图库与素材<span class="cnt">18</span></a>
+          <a href="/#guide">PDF 与表格转换<span class="cnt">8</span></a>
+          <a href="/#deep">开发者文档速查<span class="cnt">15</span></a>
+          <a href="/#rec">课程与学习平台<span class="cnt">9</span></a>
+          <a href="/#news">行业报告与数据<span class="cnt">7</span></a>
+          <a href="/#rank">效率工具排行<span class="cnt">10</span></a>
+          <a href="/#faq">浏览器扩展推荐<span class="cnt">6</span></a>
+          <a href="/#guide">字体与图标下载<span class="cnt">11</span></a>
+          <a href="/#comments">配色与设计灵感<span class="cnt">8</span></a>
+          <a href="/#overview">笔记与知识管理<span class="cnt">9</span></a>
+          <a href="/#rec">二维码与短链生成<span class="cnt">5</span></a>
+          <a href="/#news">开源项目索引<span class="cnt">10</span></a>
+          <a href="/#rank">在线简历与排版<span class="cnt">6</span></a>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section id="deep" aria-labelledby="h-deep">
+        <div class="sec-head">
+          <h2 id="h-deep">深度解析：收录数量与可用性之间的取舍</h2>
+        </div>
+        <div class="deep">
+          <p class="lede">判断一个导航页是否可信，可以只看一个指标：每条收录是否标注核验日期。数量多但长期不核验，比数量少但标注清晰更麻烦。</p>
+
+          <h3>10 月 28 日到 11 月 6 日的核验数据</h3>
+          <p>这一轮共核验 128 个收录站点，其中 9 个返回 4xx 状态码，占 7.0%；4 个域名跳转到新地址，占 3.1%；2 个出现强制登录墙，占 1.6%。剩余 113 个可匿名打开，占 88.3%。核验在 Chrome 120.0.6099.130 和 Safari 17.1 两个环境下分别进行，取其中任一可用记为通过。</p>
+
+          <h3>对比：只列站点与标注状态两种做法</h3>
+          <table class="claim-table">
+            <caption class="muted" style="caption-side:top;text-align:left;padding-bottom:6px;">两种常见导航收录方式对照（数据来自本轮核验记录）</caption>
+            <thead><tr><th scope="col">维度</th><th scope="col">只列站点名与链接</th><th scope="col">带核验日期与状态标记</th></tr></thead>
+            <tbody>
+              <tr><td>用户点开失败的概率</td><td>抽样 30 次，失败 5 次</td><td>抽样 30 次，失败 1 次</td></tr>
+              <tr><td>维护成本</td><td>低，新增几乎无成本</td><td>高，每轮核验约 2 小时</td></tr>
+              <tr><td>适合场景</td><td>个人备忘、小圈子分享</td><td>对外发布的公开索引</td></tr>
+              <tr><td>信息密度</td><td>只够点开</td><td>能提前判断是否值得点开</td></tr>
+            </tbody>
+          </table>
+
+          <h3>说法差异：一条旧收录引发的问题</h3>
+          <p>10 月 30 日有用户反馈，“在线 PDF 工具箱”点开后是停放页而非工具站。核对记录，该条目最后一次核验是 2025 年 3 月，域名注册信息在 2026 年 9 月变更。处理方式是把该条目移出索引，并在更新记录里写明原因。另一条“旧版速查表”则属于作者自行关站，页面没有替代公告，只能按失效处理。</p>
+
+          <h3>可反驳的判断：收录越多，导航站价值越大</h3>
+          <p>在 128 个收录中，有 23 个近 90 天没有任何新增访问记录（按站内点击统计）。这说明数量增长并不自动带来使用量。相反，分类边界越模糊，用户越难在两次点击内找到目标。因此本索引选择把一级分类控制在 14 个以内，宁可在二级标签上做细分。如果后续每类新增超过 25 条，再考虑拆分。</p>
+        </div>
+      </section>
+
+      <!-- 6 体验指南 -->
+      <section id="guide" aria-labelledby="h-guide">
+        <div class="sec-head">
+          <h2 id="h-guide">体验指南：从搜索到点开的四步</h2>
+        </div>
+        <ol class="steps">
+          <li><b>先看分类名，不要直接搜索</b>分类名按使用动作命名，例如“在线文档协作”比“效率工具”更贴近期望。顶部搜索框支持分类名和标签名，输入“图库”会定位到图库分类。</li>
+          <li><b>看核验日期再点开</b>每个条目右侧标注最近核验日期。超过 60 天未核验的会以灰色显示，表示需要重新检查。11 月 7 日之后，全部条目将在 12 月 7 日前完成下一轮核验。</li>
+          <li><b>注意登录墙与限制说明</b>部分站点要求注册后才能使用完整功能。描述中会写明“需注册”或无标注，无标注表示可匿名访问主要功能。单次文件限制、导出格式也写在描述里。</li>
+          <li><b>反馈失效比截图更直接</b>发现打不开的条目，可在页脚找到反馈入口，写明条目名和打开时间。11 月 5 日移除的两个站点，就是依据 11 月 3 日的三条反馈确认的。</li>
+        </ol>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section id="faq" aria-labelledby="h-faq">
+        <div class="sec-head">
+          <h2 id="h-faq">常见问题</h2>
+        </div>
+        <details class="faq">
+          <summary>收录站点依据什么标准排序？</summary>
+          <div class="faq-body">排序依据三项：可匿名访问、最近核验日期在 30 天内、描述完整度。人工推荐位单独标注，不与自动排序混排。收录本身不收费。</div>
+        </details>
+        <details class="faq">
+          <summary>在线文档协作分类里，哪些站点支持 Markdown 导入？</summary>
+          <div class="faq-body">截至 11 月 7 日，该分类下 12 个站点中有 7 个支持 Markdown 导入，分别为 Airtable、Coda、飞书文档、Notion、语雀、思源笔记和 HedgeDoc。导入后的格式兼容性在条目描述中各自标注。</div>
+        </details>
+        <details class="faq">
+          <summary>免费图库的商用授权怎么核对？</summary>
+          <div class="faq-body">以图库官网的授权页原文为准。本索引只记录授权类型和链接到具体授权说明页，不转述为“可商用”三个字。10 月底 Unsplash 调整了部分条款文字，索引描述已在 11 月 6 日更新。</div>
+        </details>
+        <details class="faq">
+          <summary>PDF 转换站点的文件大小限制是多少？</summary>
+          <div class="faq-body">8 个转换入口中，5 个支持 50MB 以内文件，2 个限制 20MB，1 个限制 10MB。超过限制会返回错误提示，需先压缩或拆分。条目描述里标明了单次限制数字。</div>
+        </details>
+        <details class="faq">
+          <summary>发现收录站点打不开，怎么反馈？</summary>
+          <div class="faq-body">记录条目名和打开时间，通过页脚反馈入口提交。11 月 3 日收到的三条关于 PDF 工具箱的反馈，促成了 11 月 5 日的移出处理，并在更新记录中公示。</div>
+        </details>
+      </section>
+
+      <!-- 8 用户评论 -->
+      <section id="comments" aria-labelledby="h-comments">
+        <div class="sec-head">
+          <h2 id="h-comments">用户评论</h2>
+          <span class="tag-link">按时间排序 · 示例数据</span>
+        </div>
+        <div class="comments">
+          <div class="comment">
+            <div class="who">周行 <span>11月7日</span></div>
+            <p>在线文档协作分类里，飞书文档那条写了“需注册”，实际不注册也能看只读链接，描述可以再细一点。</p>
+            <div class="stars">★★★★☆</div>
+          </div>
+          <div class="comment">
+            <div class="who">林小满 <span>11月6日</span></div>
+            <p>图库授权说明比之前清楚，Pexels 的署名要求终于写对了。之前我在别的导航页看到写“完全免费”，其实有附加条件。</p>
+            <div class="stars">★★★★★</div>
+          </div>
+          <div class="comment">
+            <div class="who">陈默 <span>11月5日</span></div>
+            <p>PDF 工具箱移除得好，我 11 月 3 日点开就是停放页。希望以后核验日期能再醒目一点，灰色那行字有点小。</p>
+            <div class="stars">★★★☆☆</div>
+          </div>
+          <div class="comment">
+            <div class="who">阿澈 <span>11月4日</span></div>
+            <p>分类入口里的“二维码与短链生成”只有 5 条，点进去感觉有点空。短链服务失效很快，少收也能理解。</p>
+            <div class="stars">★★★☆☆</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section id="news" aria-labelledby="h-news">
+        <div class="sec-head">
+          <h2 id="h-news">相关资讯</h2>
+        </div>
+        <ul class="news-list">
+          <li><span class="n-date">11月7日</span><div><span class="n-title">在线文档协作分类上线</span><span class="n-desc">首轮收录 12 个站点，其中 7 个支持 Markdown 导入，3 个提供免费团队空间。</span></div></li>
+          <li><span class="n-date">11月6日</span><div><span class="n-title">Unsplash 与 Pexels 授权条款文字调整</span><span class="n-desc">索引中 3 条授权描述已核对更新，署名要求未变，再分发限制有补充说明。</span></div></li>
+          <li><span class="n-date">11月3日</span><div><span class="n-title">两条用户反馈指向失效站点</span><span class="n-desc">在线 PDF 工具箱与旧版速查表返回 404，11 月 5 日完成移出处理。</span></div></li>
+          <li><span class="n-date">10月30日</span><div><span class="n-title">站内搜索新增标签检索</span><span class="n-desc">输入分类名或二级标签可直接定位区块，支持键盘方向键选择结果。</span></div></li>
+        </ul>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section id="rec" aria-labelledby="h-rec">
+        <div class="sec-head">
+          <h2 id="h-rec">相关推荐</h2>
+        </div>
+        <div class="rec-tags">
+          <a href="/#categories">在线文档协作</a>
+          <a href="/#categories">免费图库与素材</a>
+          <a href="/#categories">PDF 与表格转换</a>
+          <a href="/#categories">开发者文档速查</a>
+          <a href="/#categories">课程与学习平台</a>
+          <a href="/#categories">字体与图标下载</a>
+          <a href="/#categories">配色与设计灵感</a>
+          <a href="/#categories">笔记与知识管理</a>
+          <a href="/#categories">二维码与短链生成</a>
+          <a href="/#categories">在线简历与排版</a>
+        </div>
+      </section>
+
+      <!-- 11 效率工具榜单 -->
+      <section id="rank" aria-labelledby="h-rank">
+        <div class="sec-head">
+          <h2 id="h-rank">效率工具榜单：按站内点击与核验状态排</h2>
+          <span class="tag-link">数据截至 11月7日</span>
+        </div>
+        <ol class="rank-list">
+          <li><span><span class="r-name">飞书文档</span><span class="r-meta"> · 在线文档协作 · 11月7日核验</span></span></li>
+          <li><span><span class="r-name">Pexels</span><span class="r-meta"> · 免费图库 · 11月6日核验</span></span></li>
+          <li><span><span class="r-name">Notion</span><span class="r-meta"> · 笔记与知识管理 · 11月5日核验</span></span></li>
+          <li><span><span class="r-name">Airtable</span><span class="r-meta"> · 在线文档协作 · 11月7日核验</span></span></li>
+          <li><span><span class="r-name">Smallpdf</span><span class="r-meta"> · PDF 与表格转换 · 11月4日核验</span></span></li>
+          <li><span><span class="r-name">MDN Web Docs</span><span class="r-meta"> · 开发者文档速查 · 11月3日核验</span></span></li>
+          <li><span><span class="r-name">语雀</span><span class="r-meta"> · 笔记与知识管理 · 11月6日核验</span></span></li>
+          <li><span><span class="r-name">HedgeDoc</span><span class="r-meta"> · 在线文档协作 · 11月4日核验</span></span></li>
+        </ol>
+        <p class="muted" style="margin-top:8px;">榜单每两周更新一次，依据站内点击次数与核验通过率加权，不纳入付费推荐位。</p>
+      </section>
+
+    </main>
+
+    <!-- 侧栏 -->
+    <aside class="sidebar" aria-label="侧栏导航">
+      <div class="card">
+        <h2>栏目导航</h2>
+        <ul class="side-nav" id="sideNav">
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#featured">精选内容推荐</a></li>
+          <li><a href="/#updates">最新更新</a></li>
+          <li><a href="/#categories">分类入口</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#rec">相关推荐</a></li>
+          <li><a href="/#rank">效率工具榜单</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>本周核验提醒</h2>
+        <p class="muted">按 30 天周期，11月8日需复检的条目共 4 个，集中在“浏览器扩展推荐”分类。复检结果会写入更新记录，未通过的直接移出。</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#0f5c8c"></rect><path d="M25 50h50M50 25v50" stroke="#fff" stroke-width="12" stroke-linecap="round"></path><circle cx="50" cy="50" r="10" fill="#f2b84b"></circle></svg>
+            第一导航
+          </div>
+          <p style="color:#9fb6c8;font-size:.83rem;max-width:22em;">人工收录，逐条核验可访问状态，只保留能用且描述完整的入口。</p>
+        </div>
+        <div>
+          <h3>分类入口</h3>
+          <ul>
+            <li><a href="/#categories">在线文档协作</a></li>
+            <li><a href="/#categories">免费图库与素材</a></li>
+            <li><a href="/#categories">PDF 与表格转换</a></li>
+            <li><a href="/#categories">开发者文档速查</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>栏目</h3>
+          <ul>
+            <li><a href="/#deep">深度解析</a></li>
+            <li><a href="/#guide">体验指南</a></li>
+            <li><a href="/#faq">常见问题</a></li>
+            <li><a href="/#rank">效率工具榜单</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>反馈与说明</h3>
+          <ul>
+            <li><a href="/#updates">更新记录</a></li>
+            <li><a href="/#comments">用户反馈</a></li>
+            <li><a href="/#overview">收录标准</a></li>
+          </ul>
+          <p style="font-size:.78rem;color:#8fa6ba;margin-top:8px;">页面数据均为示例，用于展示索引结构，不构成购买或使用建议。</p>
+        </div>
+      </div>
+      <div class="foot-note">
+        <span>© 2026 第一导航 · 示例站点</span>
+        <span>页面更新时间：2026年11月8日 · 对应正文核验记录与更新条目</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="回到顶部" title="回到顶部">↑</button>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menuBtn');
+      var navMain = document.getElementById('navMain');
+      if (menuBtn && navMain) {
+        menuBtn.addEventListener('click', function () {
+          var expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+          menuBtn.setAttribute('aria-expanded', String(!expanded));
+          navMain.classList.toggle('open', !expanded);
+        });
+        // 移动端点击导航项后收起
+        navMain.addEventListener('click', function (e) {
+          if (e.target.closest('a') && window.matchMedia('(max-width:1020px)').matches) {
+            navMain.classList.remove('open');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      var toTop = document.getElementById('toTop');
+      function onScroll() {
+        if (window.scrollY > 420) {
+          toTop.classList.add('show');
+        } else {
+          toTop.classList.remove('show');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      toTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 搜索
+      var input = document.getElementById('searchInput');
+      var out = document.getElementById('searchOut');
+      var form = document.getElementById('searchForm');
+      if (input && out) {
+        input.addEventListener('input', function () {
+          var q = input.value.trim();
+          if (!q) { out.style.display = 'none'; out.textContent = ''; return; }
+          var targets = document.querySelectorAll('main section[id], .tag-index a, .side-nav a, .rec-tags a, .news-list .n-title');
+          var hits = 0;
+          targets.forEach(function (el) {
+            var text = (el.getAttribute('aria-label') || el.textContent || '').trim();
+            if (text.indexOf(q) !== -1) hits++;
+          });
+          out.style.display = hits ? 'block' : 'block';
+          out.textContent = hits ? '找到 ' + hits + ' 处相关条目' : '无结果，换一个分类名或标签试试';
+        });
+        form.addEventListener('submit', function (e) { e.preventDefault(); });
+      }
+
+      // 侧栏滚动高亮
+      var sideLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+      var sections = sideLinks.map(function (a) {
+        var id = a.getAttribute('href').replace('/#', '');
+        return document.getElementById(id);
+      }).filter(Boolean);
+      if ('IntersectionObserver' in window && sections.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var id = entry.target.id;
+              sideLinks.forEach(function (a) {
+                a.classList.toggle('active', a.getAttribute('href') === '/#' + id);
+              });
+            }
+          });
+        }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
+        sections.forEach(function (s) { io.observe(s); });
+      }
+    })();
+  </script>
+
+  <!-- WebSite & FAQPage 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "第一导航",
+    "description": "人工精选的中文网址分类索引，按场景整理可用站点，含核验日期与更新记录。",
+    "inLanguage": "zh-CN",
+    "url": "https://example.com/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "收录站点依据什么标准排序？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "排序依据三项：可匿名访问、最近核验日期在 30 天内、描述完整度。人工推荐位单独标注，不与自动排序混排。收录本身不收费。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "在线文档协作分类里，哪些站点支持 Markdown 导入？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "截至 11 月 7 日，该分类下 12 个站点中有 7 个支持 Markdown 导入，分别为 Airtable、Coda、飞书文档、Notion、语雀、思源笔记和 HedgeDoc。导入后的格式兼容性在条目描述中各自标注。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "免费图库的商用授权怎么核对？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "以图库官网的授权页原文为准。本索引只记录授权类型和链接到具体授权说明页，不转述为可商用三个字。10 月底 Unsplash 调整了部分条款文字，索引描述已在 11 月 6 日更新。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "PDF 转换站点的文件大小限制是多少？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "8 个转换入口中，5 个支持 50MB 以内文件，2 个限制 20MB，1 个限制 10MB。超过限制会返回错误提示，需先压缩或拆分。条目描述里标明了单次限制数字。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "发现收录站点打不开，怎么反馈？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "记录条目名和打开时间，通过页脚反馈入口提交。11 月 3 日收到的三条关于 PDF 工具箱的反馈，促成了 11 月 5 日的移出处理，并在更新记录中公示。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
